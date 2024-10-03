@@ -152,6 +152,7 @@
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(252, 56);
             this.numAmount.TabIndex = 10;
+            this.numAmount.ValueChanged += new System.EventHandler(this.updatePrice);
             // 
             // btnAddToCart
             // 
@@ -179,9 +180,9 @@
             this.lblTotalPrice2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice2.Location = new System.Drawing.Point(577, 593);
             this.lblTotalPrice2.Name = "lblTotalPrice2";
-            this.lblTotalPrice2.Size = new System.Drawing.Size(84, 37);
+            this.lblTotalPrice2.Size = new System.Drawing.Size(62, 37);
             this.lblTotalPrice2.TabIndex = 13;
-            this.lblTotalPrice2.Text = "label";
+            this.lblTotalPrice2.Text = "€ 0";
             // 
             // frmProduct
             // 

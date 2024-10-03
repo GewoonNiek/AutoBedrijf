@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMainMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlProducts = new System.Windows.Forms.FlowLayoutPanel();
+            this.pbAddProduct = new System.Windows.Forms.PictureBox();
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pbHome = new System.Windows.Forms.PictureBox();
             this.pbShoppingCart = new System.Windows.Forms.PictureBox();
             this.pbLogout = new System.Windows.Forms.PictureBox();
             this.pbAdminPanel = new System.Windows.Forms.PictureBox();
-            this.pnlMainMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlProducts = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbAddProduct = new System.Windows.Forms.PictureBox();
+            this.pbUserSettings = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pnlMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShoppingCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).BeginInit();
-            this.pnlMainMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -66,6 +68,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pbShoppingCart, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbLogout, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbAdminPanel, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbUserSettings, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -73,6 +76,51 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2107, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pnlMainMenu
+            // 
+            this.pnlMainMenu.ColumnCount = 5;
+            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.Controls.Add(this.pnlProducts, 1, 1);
+            this.pnlMainMenu.Controls.Add(this.pbAddProduct, 2, 0);
+            this.pnlMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainMenu.Location = new System.Drawing.Point(0, 100);
+            this.pnlMainMenu.Name = "pnlMainMenu";
+            this.pnlMainMenu.RowCount = 5;
+            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlMainMenu.Size = new System.Drawing.Size(2107, 1200);
+            this.pnlMainMenu.TabIndex = 1;
+            // 
+            // pnlProducts
+            // 
+            this.pnlProducts.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pnlMainMenu.SetColumnSpan(this.pnlProducts, 3);
+            this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProducts.Location = new System.Drawing.Point(424, 243);
+            this.pnlProducts.Name = "pnlProducts";
+            this.pnlMainMenu.SetRowSpan(this.pnlProducts, 3);
+            this.pnlProducts.Size = new System.Drawing.Size(1257, 714);
+            this.pnlProducts.TabIndex = 0;
+            // 
+            // pbAddProduct
+            // 
+            this.pbAddProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAddProduct.Image = global::AutoBedrijf.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
+            this.pbAddProduct.Location = new System.Drawing.Point(845, 3);
+            this.pbAddProduct.Name = "pbAddProduct";
+            this.pbAddProduct.Size = new System.Drawing.Size(415, 234);
+            this.pbAddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAddProduct.TabIndex = 1;
+            this.pbAddProduct.TabStop = false;
+            this.pbAddProduct.Click += new System.EventHandler(this.pbAddProduct_Click);
             // 
             // pbClose
             // 
@@ -134,50 +182,17 @@
             this.pbAdminPanel.TabStop = false;
             this.pbAdminPanel.Click += new System.EventHandler(this.pbAdminPanel_Click);
             // 
-            // pnlMainMenu
+            // pbUserSettings
             // 
-            this.pnlMainMenu.ColumnCount = 5;
-            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.Controls.Add(this.pnlProducts, 1, 1);
-            this.pnlMainMenu.Controls.Add(this.pbAddProduct, 2, 0);
-            this.pnlMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainMenu.Location = new System.Drawing.Point(0, 100);
-            this.pnlMainMenu.Name = "pnlMainMenu";
-            this.pnlMainMenu.RowCount = 5;
-            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.pnlMainMenu.Size = new System.Drawing.Size(2107, 1200);
-            this.pnlMainMenu.TabIndex = 1;
-            // 
-            // pnlProducts
-            // 
-            this.pnlProducts.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pnlMainMenu.SetColumnSpan(this.pnlProducts, 3);
-            this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProducts.Location = new System.Drawing.Point(424, 243);
-            this.pnlProducts.Name = "pnlProducts";
-            this.pnlMainMenu.SetRowSpan(this.pnlProducts, 3);
-            this.pnlProducts.Size = new System.Drawing.Size(1257, 714);
-            this.pnlProducts.TabIndex = 0;
-            // 
-            // pbAddProduct
-            // 
-            this.pbAddProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbAddProduct.Image = global::AutoBedrijf.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
-            this.pbAddProduct.Location = new System.Drawing.Point(845, 3);
-            this.pbAddProduct.Name = "pbAddProduct";
-            this.pbAddProduct.Size = new System.Drawing.Size(415, 234);
-            this.pbAddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAddProduct.TabIndex = 1;
-            this.pbAddProduct.TabStop = false;
-            this.pbAddProduct.Click += new System.EventHandler(this.pbAddProduct_Click);
+            this.pbUserSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbUserSettings.Image = global::AutoBedrijf.Properties.Resources._3276535;
+            this.pbUserSettings.Location = new System.Drawing.Point(213, 3);
+            this.pbUserSettings.Name = "pbUserSettings";
+            this.pbUserSettings.Size = new System.Drawing.Size(204, 94);
+            this.pbUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUserSettings.TabIndex = 5;
+            this.pbUserSettings.TabStop = false;
+            this.pbUserSettings.Click += new System.EventHandler(this.pbUserSettings_Click);
             // 
             // frmMainMenu
             // 
@@ -191,13 +206,14 @@
             this.Text = "Main menu";
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlMainMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShoppingCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdminPanel)).EndInit();
-            this.pnlMainMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserSettings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +229,6 @@
         private System.Windows.Forms.PictureBox pbLogout;
         private System.Windows.Forms.PictureBox pbAdminPanel;
         private System.Windows.Forms.PictureBox pbAddProduct;
+        private System.Windows.Forms.PictureBox pbUserSettings;
     }
 }

@@ -21,6 +21,7 @@ namespace AutoBedrijf
 
         database db = new database();
 
+        // Select a png for the product
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -30,6 +31,7 @@ namespace AutoBedrijf
             }
         }
 
+        // Add product to database when all fields are filled in
         private void btnConfirm_Click(object sender, EventArgs e)
         {
            if (pbProductImage.Image != null && tbKilometers.Text != null && tbPrice.Text != null && tbType.Text != null && tbYear.Text != null && numAmount.Value != 0)
@@ -38,6 +40,7 @@ namespace AutoBedrijf
            }
         }
 
+        // return to main menu
         private void btnReturn_Click(object sender, EventArgs e)
         {
             var form2 = new frmMainMenu(email);

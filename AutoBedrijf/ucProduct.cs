@@ -25,6 +25,7 @@ namespace AutoBedrijf
             this.productName = productName;
         }
 
+        // Button to open the product info form
         private void btnCheckProduct_Click(object sender, EventArgs e)
         {
             var form2 = new frmProduct(productName, email);

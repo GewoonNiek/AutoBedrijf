@@ -13,6 +13,7 @@ namespace AutoBedrijf
 {
     public partial class frmProduct : Form
     {
+        double totalPrice;
         string email;
         string productName;
         ProductClass pc;
@@ -22,6 +23,7 @@ namespace AutoBedrijf
 
         public frmProduct(string productName, string email)
         {
+            // fill in all fields
             InitializeComponent();
             this.email = email;
             this.productName = productName;
@@ -34,6 +36,7 @@ namespace AutoBedrijf
             numAmount.Maximum = pc.amount;
         }
 
+        // return to main menu
         private void btnReturn_Click(object sender, EventArgs e)
         {
             var form2 = new frmMainMenu(email);
@@ -42,6 +45,7 @@ namespace AutoBedrijf
             form2.Show();
         }
 
+        // Add product to cart
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             if (clickable)
@@ -55,6 +59,13 @@ namespace AutoBedrijf
                 form2.Show();
                 clickable = false;
             }
+        }
+
+        // fix the price when you change the amount of items you want to add
+        private void updatePrice(object sender, EventArgs e)
+        {
+            totalPrice = pc.prijs * (double)numAmount.Value;
+            lblTotalPrice2.Text = $"€ {totalPrice.ToString()}";
         }
     }
 }

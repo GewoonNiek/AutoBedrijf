@@ -89,6 +89,7 @@ namespace AutoBedrijf
             form2.Show();
         }
 
+        // Load products into panel
         private void loadProducts(UserControl us)
         {
             us.Dock = DockStyle.Top;
@@ -96,6 +97,7 @@ namespace AutoBedrijf
             us.BringToFront();
         }
 
+        // Load products into main menu when the form gets loaded
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             List<ProductClass> products = db.getAllProducts();
@@ -103,6 +105,15 @@ namespace AutoBedrijf
             {
                 loadProducts(new ucProduct(p.picture, this, p.merk, email));
             }
+        }
+
+        // Button to go to the change user settings form
+        private void pbUserSettings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new frmUserSettings(email);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
         }
     }
 }

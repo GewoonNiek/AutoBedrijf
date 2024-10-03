@@ -191,6 +191,7 @@ namespace AutoBedrijf
             return count;
         }
 
+        // Get all products from the database
         public List<ProductClass> getAllProducts()
         {
             connection.Open();
@@ -234,6 +235,7 @@ namespace AutoBedrijf
             return products;
         }
 
+        // Get product information using the product name
         public ProductClass getProductByName(string productName)
         {
             connection.Open();
@@ -271,6 +273,71 @@ namespace AutoBedrijf
             reader.Close();
             connection.Close();
             return productClass;
+        }
+
+        // Get user information using email
+        public User getUserInfo(string email)
+        {
+            connection.Open();
+            User us = new User();
+            string query = $"Select * from user where email = '{email}'";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                us.id = reader.GetInt32(0);
+                us.name = reader.GetString(1);
+                us.email = reader.GetString(4);
+                us.address = reader.GetString(3);
+                us.salt = reader.GetString(5);
+            }
+
+            reader.Close();
+            connection.Close();
+            return us;
+        }
+
+        // Update user information in database
+        public void ChangeUser(int id, string name, string email, string password, string salt, string address)
+        {
+            connection.Open();
+            password = HashPassword(password, salt);
+            string query = $"UPDATE `user` SET `name` = '{name}', `address` = '{address}', `email` = '{email}', `password` = '{password}'  WHERE `user`.`id` = {id}";
+            MySqlCommand cmd = new MySqlCommand( query, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("User succesfully updated!");
+
+        }
+
+        // get all users from database
+        public List<User> getAllUsers()
+        {
+            connection.Open();
+            List<User> users = new List<User>();
+
+            string query = "Select * from user";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                User us = new User();
+
+                us.id = reader.GetInt32(0);
+                us.name = reader.GetString(1);
+                us.email = reader.GetString(4);
+                us.address = reader.GetString(3);
+                us.salt = reader.GetString(5);
+                users.Add(us);
+            }
+            reader.Close();
+
+            return users;
         }
     }
 }
