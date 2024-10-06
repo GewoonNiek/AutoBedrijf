@@ -14,7 +14,7 @@ namespace AutoBedrijf
             tbConfirmPassword.UseSystemPasswordChar = true;
         }
         // Make a database object
-        database db = new database();
+        userDatabase db = new userDatabase();
 
         private void btnRegister_Click(object sender, EventArgs e)
         {

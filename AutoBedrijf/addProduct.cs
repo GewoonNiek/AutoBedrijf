@@ -19,7 +19,7 @@ namespace AutoBedrijf
             this.email = email;
         }
 
-        database db = new database();
+        productDatabase pdb = new productDatabase();
 
         // Select a png for the product
         private void btnSelectFile_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace AutoBedrijf
         {
            if (pbProductImage.Image != null && tbKilometers.Text != null && tbPrice.Text != null && tbType.Text != null && tbYear.Text != null && numAmount.Value != 0)
            {
-                db.addProductToDB(pbProductImage.Image, tbKilometers.Text, tbPrice.Text, tbType.Text, tbYear.Text, numAmount.Value, this, email);
+                pdb.addProductToDB(pbProductImage.Image, tbKilometers.Text, tbPrice.Text, tbType.Text, tbYear.Text, numAmount.Value, this, email);
            }
         }
 

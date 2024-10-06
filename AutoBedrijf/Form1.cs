@@ -13,7 +13,7 @@ namespace AutoBedrijf
         }
 
         // Make a database object
-        database db = new database();
+        userDatabase db = new userDatabase();
 
         // function to login the user
         private void btnLogin_Click(object sender, EventArgs e)

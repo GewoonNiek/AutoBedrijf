@@ -110,12 +110,37 @@
     <Compile Include="adminpanel.Designer.cs">
       <DependentUpon>adminpanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="database.cs" />
+    <Compile Include="ChangeAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAmount.Designer.cs">
+      <DependentUpon>ChangeAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="productDatabase.cs" />
+    <Compile Include="removeUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeUsers.Designer.cs">
+      <DependentUpon>removeUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRemoveUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRemoveUser.Designer.cs">
+      <DependentUpon>ucRemoveUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userDatabase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="main_menu.cs">
       <SubType>Form</SubType>
@@ -163,8 +188,14 @@
     <EmbeddedResource Include="adminpanel.resx">
       <DependentUpon>adminpanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAmount.resx">
+      <DependentUpon>ChangeAmount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main_menu.resx">
       <DependentUpon>main_menu.cs</DependentUpon>
@@ -185,11 +216,17 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="removeUsers.resx">
+      <DependentUpon>removeUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="shoppingcart.resx">
       <DependentUpon>shoppingcart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucProduct.resx">
       <DependentUpon>ucProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRemoveUser.resx">
+      <DependentUpon>ucRemoveUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>

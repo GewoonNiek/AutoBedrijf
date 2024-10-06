@@ -12,14 +12,16 @@ namespace AutoBedrijf
 {
     public partial class frmMainMenu : Form
     {
-        private database db = new database();
+        private userDatabase udb = new userDatabase();
+        private productDatabase pdb = new productDatabase();
+
         string email;
 
         public frmMainMenu(string email)
         {
             InitializeComponent();
-            checkRole(email);
             this.email = email;
+            checkRole(email);
 
         }
 
@@ -50,7 +52,7 @@ namespace AutoBedrijf
         // Check which role user has, if user has role 1, let adminpanel button be visible, same for addProduct button
         public void checkRole(string email)
         {
-            if (db.getRole(email) == 1)
+            if (udb.getRole(email) == 1)
             {
                 pbAdminPanel.Visible = true;
                 pbAddProduct.Visible = true;
@@ -66,7 +68,7 @@ namespace AutoBedrijf
         {
             // Open admin panel form
             this.Hide();
-            var form2 = new frmAdminPanel();
+            var form2 = new frmAdminPanel(email);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
@@ -100,10 +102,10 @@ namespace AutoBedrijf
         // Load products into main menu when the form gets loaded
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            List<ProductClass> products = db.getAllProducts();
+            List<ProductClass> products = pdb.getAllProducts();
             foreach (ProductClass p in products)
             {
-                loadProducts(new ucProduct(p.picture, this, p.merk, email));
+                loadProducts(new ucProduct(p.picture, this, p.merk, email, 0));
             }
         }
 

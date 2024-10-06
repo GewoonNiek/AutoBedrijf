@@ -15,7 +15,7 @@ namespace AutoBedrijf
     {
         string email;
         User us;
-        database db = new database();
+        userDatabase db = new userDatabase();
 
         public frmUserSettings(string email)
         {

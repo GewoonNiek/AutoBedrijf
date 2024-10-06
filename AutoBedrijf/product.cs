@@ -17,7 +17,7 @@ namespace AutoBedrijf
         string email;
         string productName;
         ProductClass pc;
-        database db = new database();
+        productDatabase db = new productDatabase();
 
         bool clickable = true;
 
