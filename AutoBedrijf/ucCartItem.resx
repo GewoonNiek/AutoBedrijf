@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add_1_icon__flatastic_1_iconset__custom_icon_design_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-1-icon--flatastic-1-iconset--custom-icon-design-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cars_png_logo_by_alexandrredir_dgxokdf_pre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cars_png_logo_by_alexandrredir_dgxokdf-pre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tab_close_icon_2048x2048_skk7it87" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tab-close-icon-2048x2048-skk7it87.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1413908" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1413908.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_3276535" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3276535.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_526659" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\526659.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_6277478" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6277478.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_7024719" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7024719.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

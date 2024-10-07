@@ -83,6 +83,16 @@ namespace AutoBedrijf.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _526659 {
+            get {
+                object obj = ResourceManager.GetObject("_526659", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6277478 {
             get {
                 object obj = ResourceManager.GetObject("_6277478", resourceCulture);

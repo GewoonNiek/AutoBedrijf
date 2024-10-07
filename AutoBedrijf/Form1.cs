@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AutoBedrijf
 {
     public partial class frmLogin : Form
     {
+        string filepath = "./shoppingcart/shoppingcart.txt";
         public frmLogin()
         {
             InitializeComponent();
@@ -20,6 +22,15 @@ namespace AutoBedrijf
         {
             // Call login function from database class
             db.loginUser(tbEmail.Text, tbPassword.Text, this);
+
+            if (!File.Exists(filepath))
+            {
+                File.Create(filepath);
+            }
+            else
+            {
+                File.WriteAllText(filepath, string.Empty);
+            }
         }
 
         // Function to open register menu

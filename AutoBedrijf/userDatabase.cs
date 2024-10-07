@@ -2,6 +2,7 @@
 using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
@@ -205,6 +206,7 @@ namespace AutoBedrijf
             return users;
         }
 
+        // Get a list of users that are not an administrator
         public List<User> getUsersWithoutAdmin()
         {
             connection.Open();
@@ -232,15 +234,31 @@ namespace AutoBedrijf
             return users;
         }
 
+        // get the user id, using the email that is logged in with
         public int getUserID(string email)
         {
-            string query = $"SELECT `id` FROM `user` WHERE `user`.`email` = '{email}'";
+            int id = 0;
+            if(connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+            string query = $"SELECT `id` FROM `user` WHERE email = @Email";
             MySqlCommand cmd = new MySqlCommand(query, connection);
-            int result = (int)cmd.ExecuteScalar();
 
-            return result;
+            // Use parameterized queries to prevent SQL injection
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            MySqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                id = r.GetInt32(0);
+            }
+            r.Close();
+            
+            return id;
         }
 
+        // delete a user (Admin only)
         public void deleteUser(string email)
         {
             connection.Open();
@@ -251,6 +269,7 @@ namespace AutoBedrijf
             connection.Close();
         }
 
+        // Get the username of a person
         public string getUsername(string email)
         {
             connection.Open();

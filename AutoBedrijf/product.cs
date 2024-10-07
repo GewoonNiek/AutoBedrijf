@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,6 +19,8 @@ namespace AutoBedrijf
         string productName;
         ProductClass pc;
         productDatabase db = new productDatabase();
+        string filepath = "./shoppingcart/shoppingcart.txt";
+        string joinedString;
 
         bool clickable = true;
 
@@ -50,6 +53,38 @@ namespace AutoBedrijf
         {
             if (clickable)
             {
+                joinedString = lblName2.Text + ";" + lblTotalPrice2.Text.Split(' ')[1] + ";" + numAmount.Value;
+
+                if (!File.Exists(filepath))
+                {
+                    File.Create(filepath);
+                    File.WriteAllText(filepath, joinedString + Environment.NewLine);
+                }
+                else
+                {
+                    var lines = File.ReadAllLines(filepath);
+
+                    bool productExists = lines.Any(line => line.Split(';')[0] == productName);
+
+                    if (!productExists)
+                    {
+                        File.AppendAllText(filepath, joinedString + Environment.NewLine);
+                    }
+                    else
+                    {
+                        for(int i = 0; i<lines.Length; i++)
+                        {
+                            if (lines[i].Split(';')[0] == productName)
+                            {
+                                lines[i] = joinedString;
+                                break;
+                            }
+                        }
+
+                        File.WriteAllLines(filepath, lines);
+                    }
+                }
+
                 MessageBox.Show("Product added to cart");
                 Thread.Sleep(2000);
 

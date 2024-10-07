@@ -77,7 +77,7 @@ namespace AutoBedrijf
         {
             // Open shoppingcart form
             this.Hide();
-            var form2 = new frmShoppingCart();
+            var form2 = new frmShoppingCart(email);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
@@ -114,6 +114,14 @@ namespace AutoBedrijf
         {
             this.Hide();
             var form2 = new frmUserSettings(email);
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
+
+        private void pbInvoices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new frmInvoices(email);
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }

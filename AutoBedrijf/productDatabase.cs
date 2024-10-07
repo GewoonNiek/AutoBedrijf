@@ -11,11 +11,13 @@ using System.Windows.Forms;
 namespace AutoBedrijf
 {
     internal class productDatabase
+
     {
         // setup database connection
         private static string connectionString = "server=localhost; user=root; database=autobedrijf; password=";
         MySqlConnection connection = new MySqlConnection(connectionString);
-
+        userDatabase udb = new userDatabase();
+        string filepath = "./shoppingcart/shoppingcart.txt";
         // Add a product to the database
         public void addProductToDB(Image image, string kilometers, string price, string type, string year, decimal amount, Form f, string email)
         {
@@ -163,5 +165,6 @@ namespace AutoBedrijf
             connection.Close();
             return result;
         }
+
     }
 }

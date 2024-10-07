@@ -34,10 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.4\lib\net461\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
@@ -116,12 +122,33 @@
     <Compile Include="ChangeAmount.Designer.cs">
       <DependentUpon>ChangeAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoices.Designer.cs">
+      <DependentUpon>frmInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="Orderdatabase.cs" />
+    <Compile Include="pdf.cs" />
     <Compile Include="productDatabase.cs" />
     <Compile Include="removeUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="removeUsers.Designer.cs">
       <DependentUpon>removeUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucCartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCartItem.Designer.cs">
+      <DependentUpon>ucCartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInvoice.Designer.cs">
+      <DependentUpon>ucInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="ucRemoveUser.cs">
       <SubType>UserControl</SubType>
@@ -194,6 +221,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoices.resx">
+      <DependentUpon>frmInvoices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="shoppingcart.resx">
       <DependentUpon>shoppingcart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCartItem.resx">
+      <DependentUpon>ucCartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInvoice.resx">
+      <DependentUpon>ucInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucProduct.resx">
       <DependentUpon>ucProduct.cs</DependentUpon>
@@ -265,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3276535.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\526659.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
